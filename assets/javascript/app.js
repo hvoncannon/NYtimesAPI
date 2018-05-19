@@ -15,11 +15,11 @@ $("#run-search").on("click", function () {
         method: 'GET',
     }).then(function (response) {
         for (var i = 0; i < 10; i++) {
-        console.log(response[i]);
+        console.log(response.docs[i]);
         console.log(response.response.docs[i].byline);
         var newDiv = $("<div>")
-        $("#article-section").append(response.response.docs[0].headline.main);
-        $("#article-section").append("<div>" + response.response.docs[0].byline.original + "</div>");
+        $("#article-section").append("<div>" + response.response.docs[i].headline.main + "</div>");
+        $("#article-section").append("<div>" + response.response.docs[i].byline.original + "</div>");
     }
     })
 })

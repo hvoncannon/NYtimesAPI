@@ -16,9 +16,10 @@ $("#run-search").on("click", function () {
     }).then(function (response) {
         for (var i = 0; i < 10; i++) {
         console.log(response.response.docs[i]);
-        console.log(response.response.docs[i].byline);
-        var newDiv = $("<div>")
-        // $("#article-section").append("<div>" + response.response.docs[i].headline.main + "</div>");
+        // console.log(response.response.docs[i].byline);
+        var newDiv = $("<div class=\"newArticle\">")
+        $(newDiv).append("<div>" + response.response.docs[i].headline.main + "</div>");
+        $('#article-section').append(newDiv);
         // $("#article-section").append("<div>" + response.response.docs[i].byline.original + "</div>");
     }
     })

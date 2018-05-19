@@ -19,6 +19,11 @@ $("#run-search").on("click", function () {
         // console.log(response.response.docs[i].byline);
         var newDiv = $("<div class=\"newArticle\">")
         $(newDiv).append("<div>" + response.response.docs[i].headline.main + "</div>");
+        $(newDiv).append("<div>" + response.response.docs[i].snippet + "</div>");
+        $(newDiv).append("<div>" + "<a href='" + response.response.docs[i].web_url + "'>" + "Go to Article</a>" + "</div>");
+
+
+
         $('#article-section').append(newDiv);
         // $("#article-section").append("<div>" + response.response.docs[i].byline.original + "</div>");
     }
